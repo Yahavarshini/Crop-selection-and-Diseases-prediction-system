@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="UTF-8">
+    <title> CRDP </title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Enter the details</div>
+    <div class="content">
+      <form action="{{ url_for('predict')}}" name="myForm" onsubmit="return validateForm()" method="post" required>
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">N(Nitrogen)</span>
+            <input type="text" name="N"  placeholder=" " required>
+          </div>
+          <div class="input-box">
+            <span class="details">P(Phosphorus)</span>
+            <input type="text" name="P"   placeholder="" required>
+          </div>
+          <div class="input-box">
+            <span class="details">K(Potassium)</span>
+            <input type="text" name="K"  placeholder="" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Temperature in Celsius</span>
+            <input type="text" name="temp" placeholder="" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Humidity in percentage</span>
+            <input type="text" name="humi"  placeholder="" required>
+          </div>
+          <div class="input-box">
+            <span class="details">pH value</span>
+            <input type="text" name="pH"  placeholder="" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Rainfall in mm</span>
+            <input type="text" name="rf"  placeholder="" required>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Predict">
+        </div>
+      </form>
+      <h3>Predicted Crop : {{crop}}</h3>
+      <h3>Possible Diseases : {{disease}}</h3>
+    </div>
+  </div>
+
+</body>
+</html>
